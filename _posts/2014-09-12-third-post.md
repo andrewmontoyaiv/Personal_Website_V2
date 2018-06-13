@@ -1,5 +1,6 @@
 ---
 title: Third Post
+category: posts
 author: Chris
 layout: post
 icon: fa-lightbulb-o

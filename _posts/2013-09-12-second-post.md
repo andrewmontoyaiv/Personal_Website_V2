@@ -1,5 +1,6 @@
 ---
 title: Second Post
+category: posts
 author: Chris
 layout: post
 ---

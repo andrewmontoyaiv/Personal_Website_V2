@@ -1,5 +1,6 @@
 ---
 title: First Post
+category: posts
 author: Chris
 layout: post
 ---

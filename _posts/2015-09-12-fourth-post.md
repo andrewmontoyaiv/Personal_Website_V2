@@ -1,5 +1,6 @@
 ---
 title: Fourth Post
+category: posts
 author: Chris
 layout: post
 ---
