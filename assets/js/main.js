@@ -39,7 +39,14 @@
 					'.important\\28 mobile\\29',
 					skel.breakpoint('mobile').active
 				);
+				$('#header')
+					.panel({
+						delay: 500,
+					});
+
 			});
+
+
 
 		// Scrolly links.
 			$('.scrolly').scrolly();
@@ -99,7 +106,7 @@
 			// Header.
 				$('#header')
 					.panel({
-						delay: 500,
+						delay: 5,
 						hideOnClick: true,
 						hideOnSwipe: true,
 						resetScroll: true,

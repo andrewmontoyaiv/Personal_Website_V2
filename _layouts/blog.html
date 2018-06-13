@@ -2,12 +2,12 @@
 layout: default
 pagination:
   enabled: true
-type: "Code"
+type: "Blog"
 ---
 {%- assign _posts = site.posts | sort: 'date' | reverse -%}
 
 
-{%- include header.html scrolly_nav=_posts type=page.type -%}
+{%- include header.html scrolly_nav=_posts type=layout.type -%}
 <!-- Main -->
 <div id="main">
 	{%- if page.content != "" -%}
@@ -28,6 +28,7 @@ type: "Code"
 		{%- assign _content = _excerpt | append: _link -%}
 		{%- include section.html title=_title subtitle=_subtitle content=_content -%}
 	{%- endfor -%}
+
 
 	{%- if paginator.total_pages > 1 -%}
 		<ul>

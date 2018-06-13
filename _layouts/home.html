@@ -1,8 +1,9 @@
 ---
 layout: default
+type: home
 ---
 {%- assign _sections = site.sections | sort: 'order' -%}
-{%- include header.html scrolly_nav=_sections -%}
+{%- include header.html scrolly_nav=_sections type = page.type -%}
 <!-- Main -->
 <div id="main">
 	{%- if page.content != "" -%}
