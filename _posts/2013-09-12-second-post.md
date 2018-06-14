@@ -1,6 +1,8 @@
 ---
 title: Second Post
 category: posts
+tags:
+  - Code
 author: Chris
 layout: post
 ---

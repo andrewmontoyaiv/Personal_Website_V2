@@ -1,6 +1,8 @@
 ---
 title: First Post
 category: posts
+tags:
+  - Code
 author: Chris
 layout: post
 ---

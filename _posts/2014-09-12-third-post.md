@@ -1,6 +1,8 @@
 ---
 title: Third Post
 category: posts
+tags:
+  - Film
 author: Chris
 layout: post
 icon: fa-lightbulb-o

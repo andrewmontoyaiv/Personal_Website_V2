@@ -39,14 +39,9 @@
 					'.important\\28 mobile\\29',
 					skel.breakpoint('mobile').active
 				);
-				$('#header')
-					.panel({
-						delay: 500,
-					});
+
 
 			});
-
-
 
 		// Scrolly links.
 			$('.scrolly').scrolly();
@@ -104,9 +99,11 @@
 					.appendTo($body);
 
 			// Header.
+
+
+				// TODO: Refactor to only appear on mobile views
 				$('#header')
 					.panel({
-						delay: 5,
 						hideOnClick: true,
 						hideOnSwipe: true,
 						resetScroll: true,
@@ -120,6 +117,33 @@
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
 					$('#headerToggle, #header, #main')
 						.css('transition', 'none');
+
+				if (skel.breakpoint == Wide)
+					$('#header')
+						.panel({
+							delay: 5,
+						});
+				if (skel.breakpoint == Normal)
+					$('#header')
+						.panel({
+							delay: 5,
+						});
+				if (skel.breakpoint == Narrow)
+					$('#header')
+						.panel({
+							delay: 5,
+						});
+
+				if (skel.breakpoint == Narrower)
+					$('#header')
+						.panel({
+							delay: 5,
+						});
+				if (skel.breakpoint == Mobile)
+					$('#header')
+						.panel({
+							delay: 500,
+						});
 
 	});
 

@@ -1,6 +1,8 @@
 ---
 title: Fourth Post
 category: posts
+tags:
+  - Film
 author: Chris
 layout: post
 ---

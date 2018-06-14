@@ -1,6 +1,7 @@
 ---
 title: Projects
 subtitle: a list of books I read
+page_id: header
 layout: "page"
 icon: fa-book
 order: 2
