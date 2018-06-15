@@ -32,19 +32,17 @@ nav_titles:
 		{%- include section.html title=_title subtitle=_subtitle content=_content -%}
 	{%- endfor -%}
 
-
+	 <div class="container">
 	{%- if paginator.total_pages > 1 -%}
-		<ul>
+  	<div class="PageNavigation">
 		  {%- if paginator.previous_page -%}
-		  <li>
-		    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-		  </li>
+		    <a class="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">&laquo; Newer</a>
 		  {%- endif -%}
 		  {%- if paginator.next_page -%}
-		  <li>
-		    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-		  </li>
+		    <a class="next" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older &raquo; </a>
 		  {%- endif -%}
-		</ul>
+
 	{%- endif -%}
+</div>
+</div>
 </div>

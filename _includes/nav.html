@@ -41,12 +41,20 @@
             <span class="icon {{ _icon }}">{{- _title -}}</span>
           </a></li>
 
+        <!-- Static blog pages whitelist links TODO: refactor to a list -->
         {%- elsif _page.tag == "front" -%}
-          {%- if include.type != "Blog" -%}
+          {%- if include.type == "BlogStatic" or include.type == "Post"-%}
+          <li><a href="{{- blogURL | absolute_url -}}" id="{{- blogSlug -}}" class="active">
+            <span class="icon {{ blogIcon }}">{{- blogTitle -}}</span>
+          </a></li>
+
+          {%- elsif include.type != "Blog" -%}
           <li><a href="{{- _page.url | absolute_url -}}" id="{{- _slug -}}-link">
             <span class="icon {{ _icon }}">{{- _title -}}</span>
           </a></li>
-          <!-- TODO: Whitelist of pages that can have blog link (from within blog, highlighted) -->
+
+
+          <!-- Whitelist of pages that can have blog link (from within blog, highlighted) -->
           {%- else -%}
             {%- assign navs = include.nav_titles -%}
             {%- for title in navs -%}
@@ -73,7 +81,8 @@
   <hr>
 
   <!-- ____________________________________ Lower Bracket ____________________________________ -->
-    {%- if include.type == "Blog" -%}
+    <!-- Static blog pages whitelist links TODO: refactor to a list -->
+    {%- if include.type == "Blog" or include.type == "BlogStatic" or include.type == "Post" -%}
       <li><a class="scrolly"><span>Categories</span></a></li>
       <!-- All link -->
       {%- assign _pages = site.html_pages | where: "title", "Blog" -%}
@@ -89,14 +98,21 @@
             <li><a href="{{- blogURL | absolute_url -}}" id="{{- blogSlug -}}" class="active">
               <span>All</span>
             </a></li>
+
+
           {%- elsif _page.tag == "front" -%}
-            {%- if _page.title == "Blog" -%}
+            <!-- Static blog pages whitelist links TODO: refactor to a list -->
+            {%-  if include.type == "BlogStatic" or include.type == "Post" -%}
+              <li><a href="{{- blogURL | absolute_url -}}" id="{{- _slug -}}-link">
+                <span>All</span>
+              </a></li>
+            {%- elsif _page.title == "Blog" -%}
               {%- if page.title != "paginated" -%}
                 {%- assign navs = include.nav_titles -%}
                 {%- for title in navs -%}
                   {%- if title == page.title -%}
                   <li><a href="{{- blogURL | absolute_url -}}" id="{{- _slug -}}-link">
-                    <span class="icon {{ _icon }}">All</span>
+                    <span>All</span>
                   </a></li>
                   {%- endif -%}
                 {%- endfor -%}
@@ -136,10 +152,12 @@
               <li><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}" class="active">
                 <span>{{ anchorTitle }}</span>
               </a></li>
+
+          <!-- Static blog pages whitelist links TODO: refactor to a list -->
             {%- elsif _page.tag == "front" -%}
-              {%- if page.title == "Blog" -%}
+              {%- if page.title == "Blog" or include.type == "BlogStatic" or include.type == "Post" -%}
                 <li><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}-link">
-                  <span class="icon {{ _icon }}">{{ anchorTitle }}</span>
+                  <span>{{ anchorTitle }}</span>
                 </a></li>
                 <!-- Whitelist of approved pages -->
               {%- else -%}
@@ -147,8 +165,9 @@
                 {%- for title in navs -%}
                   {%- if title == page.title and title != titles -%}
                   <li><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}-link">
-                    <span class="icon {{ _icon }}">{{ anchorTitle }}</span>
+                    <span>{{ anchorTitle }}</span>
                   </a></li>
+
                   {%- endif -%}
                 {%- endfor -%}
               {%- endif -%}
@@ -157,6 +176,36 @@
         {%- endunless -%}
       {%- endfor -%}
     {%- endunless -%}
+
+
+    <!-- Blog Static Pages -->
+    {%- assign statics = site.html_pages | where: "page_id", "Blog" -%}
+      {%- unless blogPage == null -%}
+        {%- for static in statics -%}
+          {%- assign _title = static.title | default: _page.layout -%}
+          {%- assign _slug = _title | slugify -%}
+          {%- assign _icon = static.icon | default: 'fa-link' -%}
+
+
+          {%- if static.url == page.url -%}
+            <li><a href="#" id="{{- _slug -}}" class="active">
+              <span class="icon {{ _icon }}">{{- _title -}}</span>
+            </a></li>
+
+          {%- elsif static.url -%}
+            <li><a href="{{- static.url | absolute_url -}}" id="{{- _slug -}}-link">
+              <span class="icon {{ _icon }}">{{- _title -}}</span>
+            </a></li>
+
+          {%- else -%}
+            <li><a href="{{- '/' | absolute_url -}}" id="broken-link"><span class="icon fa-unlink">[broken link]</span></a></li>
+          {%- endif -%}
+
+
+        {%- endfor -%}
+      {%- endunless -%}
+
+
 
     {%- else -%}<!-- Non - blog pages -->
       {%- assign _sections = include.section_items | where_exp: "section", "section.hide != true" -%}
