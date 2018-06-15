@@ -1,6 +1,6 @@
 ---
 title: First Post
-category: posts
+category: Programming
 tags:
   - Code
 author: Chris

@@ -1,6 +1,6 @@
 ---
 title: Second Post
-category: posts
+category: Programming
 tags:
   - Code
 author: Chris
