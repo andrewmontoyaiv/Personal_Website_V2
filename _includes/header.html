@@ -2,13 +2,14 @@
   Include vars:
   scrolly_nav
   type
+  nav_titles
 {%- endcomment -%}
 
 <!-- Header -->
 <div id="header">
   <div class="top">
     {%- include logo.html -%}
-    {%- include nav.html section_items=include.scrolly_nav type=include.type -%}
+    {%- include nav.html section_items=include.scrolly_nav type=include.type nav_titles=include.nav_titles -%}
   </div>
   <div class="bottom">
     {%- include social_icons.html -%}

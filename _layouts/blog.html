@@ -3,11 +3,14 @@ layout: default
 pagination:
   enabled: true
 type: "Blog"
+nav_titles:
+  - "Posts tagged with code"
+  - "Posts tagged with film"
 ---
 {%- assign _posts = site.posts | sort: 'date' | reverse -%}
 
 
-{%- include header.html scrolly_nav=_posts type=layout.type -%}
+{%- include header.html scrolly_nav=_posts type=layout.type nav_titles=layout.nav_titles -%}
 <!-- Main -->
 <div id="main">
 	{%- if page.content != "" -%}

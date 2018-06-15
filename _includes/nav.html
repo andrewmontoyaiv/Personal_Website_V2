@@ -2,6 +2,7 @@
   Include vars:
   section_items
   type
+  nav_titles
 {%- endcomment -%}
 
 <!-- Nav -->
@@ -45,6 +46,17 @@
           <li><a href="{{- _page.url | absolute_url -}}" id="{{- _slug -}}-link">
             <span class="icon {{ _icon }}">{{- _title -}}</span>
           </a></li>
+          <!-- TODO: Whitelist of pages that can have blog link (from within blog, highlighted) -->
+          {%- else -%}
+            {%- assign navs = include.nav_titles -%}
+            {%- for title in navs -%}
+              {%- if title == page.title -%}
+              <li><a href="{{- blogURL | absolute_url -}}" id="{{- blogSlug -}}" class="active">
+                <span class="icon {{ blogIcon }}">{{- blogTitle -}}</span>
+              </a></li>
+              {%- endif -%}
+            {%- endfor -%}
+
           {%- endif -%}
 
         {%- elsif _page.url -%}
@@ -61,8 +73,92 @@
   <hr>
 
   <!-- ____________________________________ Lower Bracket ____________________________________ -->
+    {%- if include.type == "Blog" -%}
+      <li><a class="scrolly"><span>Categories</span></a></li>
+      <!-- All link -->
+      {%- assign _pages = site.html_pages | where: "title", "Blog" -%}
+      {%- unless _pages == null -%}
+        {%- for _page in _pages -%}
+          {%- if _pages.tag == "paginated" -%}
+            {%- if  _page.url == page.url -%}
+              <li><a href="{{- blogURL | absolute_url -}}" id="{{- blogSlug -}}" class="active">
+                <span>All</span>
+              </a></li>
+            {%- endif -%}
+          {%- elsif _page.url == page.url -%}
+            <li><a href="{{- blogURL | absolute_url -}}" id="{{- blogSlug -}}" class="active">
+              <span>All</span>
+            </a></li>
+          {%- elsif _page.tag == "front" -%}
+            {%- if _page.title == "Blog" -%}
+              {%- if page.title != "paginated" -%}
+                {%- assign navs = include.nav_titles -%}
+                {%- for title in navs -%}
+                  {%- if title == page.title -%}
+                  <li><a href="{{- blogURL | absolute_url -}}" id="{{- _slug -}}-link">
+                    <span class="icon {{ _icon }}">All</span>
+                  </a></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endunless -%}
 
-    {%- if include.type != "Blog" -%}
+
+    <!-- Other blog tags -->
+    {%- assign nav_titles = include.nav_titles -%}
+    {%- unless nav_titles == null -%}
+      {%- for titles in nav_titles -%}
+        {%- assign anchor = site.html_pages | where: "tag", "front" | where: "title", titles -%}
+          <!-- Produce Anchor Element -->
+          {%- unless anchor == null -%}
+            {%- assign anchor = anchor | sort: 'order' -%}
+            {%- for _page in anchor -%}
+              {%- assign anchorTitle = _page.title | default: _page.layout -%}
+              {%- assign anchorSlug = _title | slugify -%}
+              {%- assign anchorIcon = _page.icon | default: 'fa-link' -%}
+              {%- assign anchorURL = _page.url | default: 'fa-link' -%}
+            {%- endfor -%}
+          {%- endunless -%}
+          <!-- Produce rest of the elements -->
+        {%- assign _pages = site.html_pages | where: "title", titles -%}
+        {%- unless _pages == null -%}
+          {%- for _page in _pages -%}
+            {%- if _page.tag == "paginated" -%}
+              {%- if  _page.url == page.url -%}
+                <li><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}" class="active">
+                  <span>{{ anchorTitle }}</span>
+                </a></li>
+              {%- endif -%}
+            {%- elsif _page.url == page.url -%}
+              <li><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}" class="active">
+                <span>{{ anchorTitle }}</span>
+              </a></li>
+            {%- elsif _page.tag == "front" -%}
+              {%- if page.title == "Blog" -%}
+                <li><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}-link">
+                  <span class="icon {{ _icon }}">{{ anchorTitle }}</span>
+                </a></li>
+                <!-- Whitelist of approved pages -->
+              {%- else -%}
+                {%- assign navs = include.nav_titles -%}
+                {%- for title in navs -%}
+                  {%- if title == page.title and title != titles -%}
+                  <li><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}-link">
+                    <span class="icon {{ _icon }}">{{ anchorTitle }}</span>
+                  </a></li>
+                  {%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endunless -%}
+
+    {%- else -%}<!-- Non - blog pages -->
       {%- assign _sections = include.section_items | where_exp: "section", "section.hide != true" -%}
       {%- unless _sections == null -%}
         {%- for _sect in _sections -%}
