@@ -7,6 +7,7 @@ title: Home
 icon: fa-home
 page_id: header
 order: 1
+tag: index
 
 
 ---
