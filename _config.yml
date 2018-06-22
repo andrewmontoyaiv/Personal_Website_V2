@@ -31,33 +31,33 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Andrew Montoya IV
-subtitle: Your awesome subtitle
+subtitle: Programmer & Tech Artist
 description: >- # this means to ignore newlines until "baseurl:"
-  This is the demo site for a Jekyll theme version of
-  HTML5 UP's sleek, responsive site template Prologue.
-author: Your Incredible Name
-email: your-email@example.com
-avatar: assets/images/avatar.jpg
+  This is my personal website. You can view my past projects
+  and new stuff that I am working on
+author: Andrew Montoya IV
+email: andrewmontoyaiv@gmail.com
+avatar: assets/images/profile.png
 
 # You'll want to customize url and baseurl for your own site:
-baseurl: "/index" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "andrewmontoyaiv.github.io" # the base hostname & protocol for your site
 
 # Social settings
 facebook_url:
-github_url:
+github_url: 'https://github.com/andrewmontoyaiv'
 googleplus_url:
-instagram_url:
+instagram_url: 'https://www.instagram.com/andrewmontoyaiv'
 linkedin_url:
 pinterest_url:
 slack_url:
-twitter_url:
+twitter_url: 'https://twitter.com/andymontoyaiv'
+youtube_url: 'https://www.youtube.com/user/Animaticals'
 
 # Google Analytics Tracking ID goes here:
 google_analytics:
 
 # The following settings are NECESSARY for the Prologue theme to run:
-theme: jekyll-theme-prologue
 collections: [sections]
 
 
@@ -96,7 +96,7 @@ pagination:
   per_page: 2
 
   # The permalink structure for the paginated pages (this can be any level deep)
-  permalink: /hello/:num/ # Pages are index.html inside this folder (default)
+  permalink: /blog/:num/ # Pages are index.html inside this folder (default)
   #permalink: '/page/:num.html' # Pages are simple html files
   #permalink: '/page/:num' # Pages are html files, linked jekyll extensionless permalink style.
 

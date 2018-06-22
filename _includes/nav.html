@@ -143,19 +143,19 @@
             {%- if _page.tag == "paginated" -%}
               {%- if  _page.url == page.url -%}
                 <li class = "categories"><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}" class="active">
-                  <span>{{ anchorTitle }}</span>
+                  <span>&raquo; &nbsp; {{ anchorTitle }}</span>
                 </a></li>
               {%- endif -%}
             {%- elsif _page.url == page.url -%}
               <li class = "categories"><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}" class="active">
-                <span>{{ anchorTitle }}</span>
+                <span>&raquo; &nbsp; {{ anchorTitle }}</span>
               </a></li>
 
           <!-- Static blog pages whitelist links TODO: refactor to a list -->
             {%- elsif _page.tag == "front" -%}
               {%- if page.title == "Blog" or include.type == "BlogStatic" or include.type == "Post" -%}
                 <li class = "categories"><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}-link">
-                  <span>{{ anchorTitle }}</span>
+                  <span>&raquo; &nbsp; {{ anchorTitle }}</span>
                 </a></li>
                 <!-- Whitelist of approved pages -->
               {%- else -%}
@@ -163,7 +163,7 @@
                 {%- for title in navs -%}
                   {%- if title == page.title and title != titles -%}
                   <li class = "categories"><a href="{{- anchorURL | absolute_url -}}" id="{{- anchorSlug -}}-link">
-                    <span>{{ anchorTitle }}</span>
+                    <span>&raquo; &nbsp; {{ anchorTitle }}</span>
                   </a></li>
 
                   {%- endif -%}

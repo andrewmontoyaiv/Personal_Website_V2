@@ -11,7 +11,11 @@ type: "Blog"
 <!-- Main -->
 <div id="main">
 	{%- if page.content != "" -%}
-		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
+  <section class= "category-header">
+    <h3>Showing posts with the label <a href="#"> {{ page.title }} </a></h3>
+    <a href="{{- baseurl -}}/blog.html" class="show-all">Show All</a>
+  </section>
+
 	{%- endif -%}
 	<!-- Posts List -->
 
