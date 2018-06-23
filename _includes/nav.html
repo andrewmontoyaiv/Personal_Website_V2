@@ -6,6 +6,7 @@
 
 <!-- Nav -->
 <nav id="nav">
+     <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
   <ul>
     {%- assign blogPage = site.html_pages | where: "tag", "front" | where: "title", "Blog" -%}  <!-- Reference to blog page -->
     {%- unless blogPage == null -%}
@@ -78,52 +79,19 @@
     {%- endunless -%}
 
   <hr>
-
   <!-- ____________________________________ Lower Bracket ____________________________________ -->
     <!-- Static blog pages whitelist links TODO: refactor to a list -->
+
     {%- if include.type == "Blog" or include.type == "BlogStatic" or include.type == "Post" -%}
-      <!-- All link -->
-      {%- assign _pages = site.html_pages | where: "title", "Blog" -%}
-      {%- unless _pages == null -%}
-        {%- for _page in _pages -%}
-          {%- if _pages.tag == "paginated" -%}
-            {%- if  _page.url == page.url -%}
-              <li><a href="{{- blogURL | absolute_url -}}" id="{{- blogSlug -}}" class="active">
-                <span>Show All</span>
-              </a></li>
-            {%- endif -%}
-          {%- elsif _page.url == page.url -%}
-            <li><a href="{{- blogURL | absolute_url -}}" id="{{- blogSlug -}}" class="active">
-              <span>Show All</span>
-            </a></li>
-
-
-          {%- elsif _page.tag == "front" -%}
-            <!-- Static blog pages whitelist links TODO: refactor to a list -->
-            {%-  if include.type == "BlogStatic" or include.type == "Post" -%}
-              <li><a href="{{- blogURL | absolute_url -}}" id="{{- _slug -}}-link">
-                <span>Show All</span>
-              </a></li>
-            {%- elsif _page.title == "Blog" -%}
-              {%- if page.title != "paginated" -%}
-                {%- assign navs = site.nav_titles -%}
-                {%- for title in navs -%}
-                  {%- if title == page.title -%}
-                  <li><a href="{{- blogURL | absolute_url -}}" id="{{- _slug -}}-link">
-                    <span>Show All</span>
-                  </a></li>
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- endif -%}
-            {%- endif -%}
-          {%- endif -%}
-        {%- endfor -%}
-      {%- endunless -%}
-
+    <!-- Show All Removed -->
+    <li class="category-label"><a href="#" id="{{- blogSlug -}}">
+      <span class="icon fa-angle-double-down">Categories</span>
+    </a>
 
     <!-- Other blog tags -->
     {%- assign nav_titles = site.nav_titles -%}
     {%- unless nav_titles == null -%}
+      <ul class="blog-dropdown">
       {%- for titles in nav_titles -%}
         {%- assign anchor = site.html_pages | where: "tag", "front" | where: "title", titles -%}
           <!-- Produce Anchor Element -->
@@ -173,6 +141,8 @@
           {%- endfor -%}
         {%- endunless -%}
       {%- endfor -%}
+      </li>
+       </ul>
     {%- endunless -%}
 
 
@@ -216,7 +186,7 @@
         {%- endfor -%}
       {%- endunless -%}
     {%- endif -%}
-
+          <li><a href="/feed.xml" id="{{- _slug -}}-link" class="scrolly"><span class="icon {{ _icon }}">RSS</span></a></li>
 
   </ul>
 </nav>

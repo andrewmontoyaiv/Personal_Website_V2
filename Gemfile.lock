@@ -38,12 +38,12 @@ GEM
       jekyll (~> 3.3)
       sinatra (~> 1.4)
       sinatra-contrib (~> 1.4)
-    jekyll-feed (0.10.0)
-      jekyll (~> 3.3)
     jekyll-paginate-v2 (1.9.4)
       jekyll (~> 3.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
+    jekyll-sitemap (1.2.0)
+      jekyll (~> 3.3)
     jekyll-watch (2.0.0)
       listen (~> 3.0)
     kramdown (1.17.0)
@@ -93,8 +93,8 @@ DEPENDENCIES
   bundler (~> 1.12)
   jekyll (~> 3.3)
   jekyll-admin
-  jekyll-feed
   jekyll-paginate-v2 (~> 1.7)
+  jekyll-sitemap
   jekyll-theme-prologue!
 
 BUNDLED WITH

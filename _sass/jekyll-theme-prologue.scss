@@ -579,6 +579,7 @@
 			}
 
 			li {
+
 				a {
 					text-align: left;
 					display: block;
@@ -613,6 +614,14 @@
 							color: #e27689;
 						}
 					}
+					&:hover {
+						color: #fff;
+
+						span:before {
+							color: #e27689;
+						}
+					}
+
 				}
 			}
 		}
@@ -774,6 +783,31 @@
 		position: relative;
 	  float: center;
 	}
+
+
+/* Dropdown Navigation */
+	nav {
+
+  ul {
+    li {
+
+      a {
+        &:hover {
+        }
+        &:not(:only-child):after {
+
+        }
+      } // Dropdown list
+      ul {
+				display: none;
+        a {
+
+        }
+      }
+    }
+  }
+}
+
 
 
 /* ############################################################################## */

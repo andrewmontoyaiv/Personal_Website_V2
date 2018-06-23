@@ -1,6 +1,6 @@
 ---
 title: Fourth Post
-category: Film & Design
+category: Film and Design
 tags:
   - Film
 author: Chris

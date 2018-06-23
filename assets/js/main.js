@@ -113,6 +113,29 @@
 						visibleClass: 'header-visible'
 					});
 
+					// Custom Javascript
+					$('nav ul li > a:not(:only-child)').click(function(e) {
+						$(this).siblings('.blog-dropdown').slideToggle();
+						$('.blog-dropdown').not($(this).siblings()).hide();
+						e.stopPropagation();
+						if($('nav ul li ul').is(":visible")) {
+							// $(".category-label a span before").css("color", "#e27689");
+						}
+					});
+					$('html').click(function() {
+			      $('.nav-dropdown').hide();
+			    });
+
+					if($('.categories a').hasClass('active'))
+					{
+					    $("nav ul li ul").css("display", "block");
+					}
+
+
+
+				// End of custom JS
+
+
 			// Fix: Remove transitions on WP<10 (poor/buggy performance).
 				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
 					$('#headerToggle, #header, #main')
