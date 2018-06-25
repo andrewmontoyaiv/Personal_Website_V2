@@ -171,6 +171,7 @@
 
 
         {%- endfor -%}
+                  <li><a href="/feed.xml" id="{{- _slug -}}-link" class="scrolly"><span class="icon {{ _icon }}">RSS</span></a></li>
       {%- endunless -%}
 
 
@@ -186,7 +187,7 @@
         {%- endfor -%}
       {%- endunless -%}
     {%- endif -%}
-          <li><a href="/feed.xml" id="{{- _slug -}}-link" class="scrolly"><span class="icon {{ _icon }}">RSS</span></a></li>
+
 
   </ul>
 </nav>
