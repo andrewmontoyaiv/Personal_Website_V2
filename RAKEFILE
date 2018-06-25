@@ -11,10 +11,8 @@ namespace :git do
   end
 
   def git_clean?
-    git_state = `git diff-index --quiet HEAD`
-	system "git diff --exit-code"
-	puts git_state
-    clean = (git_state =~ 1)
+    git_state = `git status 2> /dev/null | tail -n1`
+    clean = (git_state =~ /working directory clean/)
   end
 
   desc "Verify source branch"
@@ -35,7 +33,7 @@ namespace :git do
   end
 
   desc "Deploy to remote origin"
-  task :deploy => [:check_branch, :check_git] do
+  task :deploy => [:check_branch] do
     puts "Building Jekyll site"
     system "JEKYLL_ENV=production jekyll build"
 
