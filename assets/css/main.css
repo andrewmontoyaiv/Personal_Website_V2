@@ -1629,10 +1629,6 @@ button,
       color: #fff; }
       #nav ul li a.active span:before {
         color: #e27689; }
-    #nav ul li a:hover {
-      color: #fff; }
-      #nav ul li a:hover span:before {
-        color: #e27689; }
 
 /* Footer */
 #footer {
@@ -1731,27 +1727,9 @@ button,
   text-align: left; }
 
 /* Categories */
-.show-all {
-  position: relative;
-  float: center; }
-
-/* Dropdown Navigation */
-nav ul li ul {
-  display: none; }
-
-/* Youtube CSS */
-.yt-container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; }
-
-.embed-responsive-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
+hr.nav_divider {
+  border: 0;
+  border-top: solid 2px #41484c; }
 
 /* ############################################################################## */
 /* Wide */
