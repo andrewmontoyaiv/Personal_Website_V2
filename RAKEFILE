@@ -11,9 +11,9 @@ namespace :git do
   end
 
   def git_clean?
-    git_state = `git status1`
+    git_state = `git status`
     clean = (git_state =~ /working directory clean/)
-  end
+  endgit 
 
   desc "Verify source branch"
   task :check_branch do
