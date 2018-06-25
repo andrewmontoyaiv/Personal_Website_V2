@@ -70,7 +70,7 @@ plugins:
 ############################################################
 
 # Custom variables
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'jekyll-theme-prologue.gemspec']
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'jekyll-theme-prologue.gemspec', 'RAKEFILE']
 
 # Array of categories to iterate on
 
