@@ -1,1 +1,1 @@
-Sitemap: andrewmontoyaiv.com/sitemap.xml
+Sitemap: /andrewmontoyaiv.com/sitemap.xml
