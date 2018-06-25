@@ -12,7 +12,8 @@ namespace :git do
 
   def git_clean?
     git_state = `git diff-index --quiet HEAD`
-	puts #{git_state}
+	system "git diff --exit-code"
+	puts git_state
     clean = (git_state =~ 1)
   end
 
