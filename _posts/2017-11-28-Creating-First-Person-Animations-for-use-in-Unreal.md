@@ -1,10 +1,7 @@
 ---
 title: Creating First Person Animations for use in Unreal
 category: Film and Design
-tags:
-  - Film
-  - UE4
-  - Maya
+tags: UE4 Maya
 layout: post
 permalink: /blog/:title.html
 ---

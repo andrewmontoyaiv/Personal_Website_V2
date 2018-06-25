@@ -1,8 +1,7 @@
 ---
 title: Adding Mixamo Animations to Unreal Rigs
 category: Film and Design
-tags:
-  - Film
+tags: Maya UE4
 layout: post
 icon: fa-lightbulb-o
 permalink: /blog/:title.html

@@ -1,8 +1,7 @@
 ---
 title: Using Animation Notifies in Unreal's ASM
 category: Programming
-tags:
-  - Code
+tags: UE4
 layout: post
 permalink: /blog/:title.html
 ---
