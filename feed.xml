@@ -1,22 +1,369 @@
----
-layout: null
----
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{{ site.title }}</title>
-    <description>{{ site.description }}</description>
-    <link>{{ site.url }}</link>
-    {% for post in site.posts %}
-      {% unless post.draft %}
-        <item>
-          <title>{{ post.title | xml_escape }}</title>
-          <description>{{ post.content | xml_escape }}</description>
-          <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
-          <link>{{ post.url | prepend: site.url }}</link>
-          <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
-        </item>
-      {% endunless %}
-    {% endfor %}
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-19T10:02:12-05:00</updated><id>http://localhost:4000/</id><title type="html">Andrew Montoya IV</title><subtitle>My Portfolio &amp; Blog Site</subtitle><author><name>Andrew Montoya IV</name></author><entry><title type="html">Elements Reference</title><link href="http://localhost:4000/film%20&%20design/2018/01/12/elements.html" rel="alternate" type="text/html" title="Elements Reference" /><published>2018-01-12T00:00:00-06:00</published><updated>2018-01-12T00:00:00-06:00</updated><id>http://localhost:4000/film%20&amp;%20design/2018/01/12/elements</id><content type="html" xml:base="http://localhost:4000/film%20&amp;%20design/2018/01/12/elements.html">&lt;!-- Text stuff --&gt;
+&lt;h2&gt;Text&lt;/h2&gt;
+&lt;p&gt;This is &lt;b&gt;bold&lt;/b&gt; and this is &lt;strong&gt;strong&lt;/strong&gt;. This is &lt;i&gt;italic&lt;/i&gt; and this is &lt;em&gt;emphasized&lt;/em&gt;.
+	This is &lt;sup&gt;superscript&lt;/sup&gt; text and this is &lt;sub&gt;subscript&lt;/sub&gt; text.
+	This is &lt;u&gt;underlined&lt;/u&gt; and this is code: &lt;code&gt;for (;;) { ... }&lt;/code&gt;.
+	Finally, this is a &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
+	&lt;hr /&gt;
+	&lt;h2&gt;Heading Level 2&lt;/h2&gt;
+	&lt;h3&gt;Heading Level 3&lt;/h3&gt;
+	&lt;hr /&gt;
+	&lt;header&gt;
+		&lt;h2&gt;Heading with a Subtitle&lt;/h2&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet nullam id egestas urna aliquam&lt;/p&gt;
+	&lt;/header&gt;
+	&lt;p&gt;Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.&lt;/p&gt;
+	&lt;hr /&gt;
+
+	&lt;!-- Lists --&gt;
+	&lt;h2&gt;Lists&lt;/h2&gt;
+	&lt;div class=&quot;row&quot;&gt;
+		&lt;div class=&quot;6u 12u$(small)&quot;&gt;
+
+			&lt;h3&gt;Unordered&lt;/h3&gt;
+			&lt;ul&gt;
+				&lt;li&gt;Dolor pulvinar etiam.&lt;/li&gt;
+				&lt;li&gt;Sagittis lorem eleifend.&lt;/li&gt;
+				&lt;li&gt;Felis feugiat dolore viverra.&lt;/li&gt;
+				&lt;li&gt;Dolor pulvinar etiam.&lt;/li&gt;
+			&lt;/ul&gt;
+
+			&lt;h3&gt;Icons&lt;/h3&gt;
+			&lt;ul class=&quot;icons&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;icon fa-twitter&quot;&gt;&lt;span class=&quot;label&quot;&gt;Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;icon fa-facebook&quot;&gt;&lt;span class=&quot;label&quot;&gt;Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;icon fa-instagram&quot;&gt;&lt;span class=&quot;label&quot;&gt;Instagram&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;icon fa-github&quot;&gt;&lt;span class=&quot;label&quot;&gt;Github&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;icon fa-dribbble&quot;&gt;&lt;span class=&quot;label&quot;&gt;Dribbble&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+
+		&lt;/div&gt;
+		&lt;div class=&quot;6u$ 12u$(small)&quot;&gt;
+
+			&lt;h3&gt;Ordered&lt;/h3&gt;
+			&lt;ol&gt;
+				&lt;li&gt;Dolor pulvinar etiam.&lt;/li&gt;
+				&lt;li&gt;Etiam vel felis at viverra.&lt;/li&gt;
+				&lt;li&gt;Felis enim feugiat magna.&lt;/li&gt;
+				&lt;li&gt;Etiam vel felis nullam.&lt;/li&gt;
+				&lt;li&gt;Felis enim et tempus.&lt;/li&gt;
+			&lt;/ol&gt;
+
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;h3&gt;Definition&lt;/h3&gt;
+	&lt;dl&gt;
+		&lt;dt&gt;Item 1&lt;/dt&gt;
+		&lt;dd&gt;
+			&lt;p&gt;Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.&lt;/p&gt;
+		&lt;/dd&gt;
+		&lt;dt&gt;Item 2&lt;/dt&gt;
+		&lt;dd&gt;
+			&lt;p&gt;Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.&lt;/p&gt;
+		&lt;/dd&gt;
+		&lt;dt&gt;Item 3&lt;/dt&gt;
+		&lt;dd&gt;
+			&lt;p&gt;Lorem ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.&lt;/p&gt;
+		&lt;/dd&gt;
+	&lt;/dl&gt;
+
+	&lt;h3&gt;Button&lt;/h3&gt;
+		&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button&lt;/a&gt;
+		&lt;a href=&quot;#&quot; class=&quot;button icon fa-search&quot;&gt;Icon&lt;/a&gt;
+
+	&lt;hr /&gt;
+
+	&lt;!-- Blockquote --&gt;
+	&lt;h2&gt;Blockquote&lt;/h2&gt;
+	&lt;blockquote&gt;Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis.&lt;/blockquote&gt;
+
+	&lt;hr /&gt;
+
+	&lt;!-- Table --&gt;
+	&lt;h2&gt;Table&lt;/h2&gt;
+	&lt;div class=&quot;table-wrapper&quot;&gt;
+		&lt;table&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th&gt;Name&lt;/th&gt;
+					&lt;th&gt;Description&lt;/th&gt;
+					&lt;th&gt;Price&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;Item 1&lt;/td&gt;
+					&lt;td&gt;Ante turpis integer aliquet porttitor.&lt;/td&gt;
+					&lt;td&gt;29.99&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;Item 2&lt;/td&gt;
+					&lt;td&gt;Vis ac commodo adipiscing arcu aliquet.&lt;/td&gt;
+					&lt;td&gt;19.99&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;Item 3&lt;/td&gt;
+					&lt;td&gt; Morbi faucibus arcu accumsan lorem.&lt;/td&gt;
+					&lt;td&gt;29.99&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;Item 4&lt;/td&gt;
+					&lt;td&gt;Vitae integer tempus condimentum.&lt;/td&gt;
+					&lt;td&gt;19.99&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;Item 5&lt;/td&gt;
+					&lt;td&gt;Ante turpis integer aliquet porttitor.&lt;/td&gt;
+					&lt;td&gt;29.99&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+			&lt;tfoot&gt;
+				&lt;tr&gt;
+					&lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;
+					&lt;td&gt;100.00&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tfoot&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+
+	&lt;hr /&gt;
+
+	&lt;!-- Form --&gt;
+	&lt;h2&gt;Form&lt;/h2&gt;
+
+	&lt;form method=&quot;post&quot; action=&quot;#&quot;&gt;
+		&lt;div class=&quot;row uniform&quot;&gt;
+			&lt;div class=&quot;6u 12u$(xsmall)&quot;&gt;
+				&lt;input type=&quot;text&quot; name=&quot;demo-name&quot; id=&quot;demo-name&quot; value=&quot;&quot; placeholder=&quot;Name&quot; /&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;6u$ 12u$(xsmall)&quot;&gt;
+				&lt;input type=&quot;email&quot; name=&quot;demo-email&quot; id=&quot;demo-email&quot; value=&quot;&quot; placeholder=&quot;Email&quot; /&gt;
+			&lt;/div&gt;
+			&lt;!-- Break --&gt;
+			&lt;div class=&quot;12u$&quot;&gt;
+				&lt;div class=&quot;select-wrapper&quot;&gt;
+					&lt;select name=&quot;demo-category&quot; id=&quot;demo-category&quot;&gt;
+						&lt;option value=&quot;&quot;&gt;- Category -&lt;/option&gt;
+						&lt;option value=&quot;1&quot;&gt;Manufacturing&lt;/option&gt;
+						&lt;option value=&quot;1&quot;&gt;Shipping&lt;/option&gt;
+						&lt;option value=&quot;1&quot;&gt;Administration&lt;/option&gt;
+						&lt;option value=&quot;1&quot;&gt;Human Resources&lt;/option&gt;
+					&lt;/select&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;!-- Break --&gt;
+			&lt;div class=&quot;4u 12u$(small)&quot;&gt;
+				&lt;input type=&quot;radio&quot; id=&quot;demo-priority-low&quot; name=&quot;demo-priority&quot; checked&gt;
+				&lt;label for=&quot;demo-priority-low&quot;&gt;Low&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;4u 12u$(small)&quot;&gt;
+				&lt;input type=&quot;radio&quot; id=&quot;demo-priority-normal&quot; name=&quot;demo-priority&quot;&gt;
+				&lt;label for=&quot;demo-priority-normal&quot;&gt;Normal&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;4u$ 12u$(small)&quot;&gt;
+				&lt;input type=&quot;radio&quot; id=&quot;demo-priority-high&quot; name=&quot;demo-priority&quot;&gt;
+				&lt;label for=&quot;demo-priority-high&quot;&gt;High&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;!-- Break --&gt;
+			&lt;div class=&quot;6u 12u$(small)&quot;&gt;
+				&lt;input type=&quot;checkbox&quot; id=&quot;demo-copy&quot; name=&quot;demo-copy&quot;&gt;
+				&lt;label for=&quot;demo-copy&quot;&gt;Email me a copy&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;6u$ 12u$(small)&quot;&gt;
+				&lt;input type=&quot;checkbox&quot; id=&quot;demo-human&quot; name=&quot;demo-human&quot; checked&gt;
+				&lt;label for=&quot;demo-human&quot;&gt;I am a human&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;!-- Break --&gt;
+			&lt;div class=&quot;12u$&quot;&gt;
+				&lt;textarea name=&quot;demo-message&quot; id=&quot;demo-message&quot; placeholder=&quot;Enter your message&quot; rows=&quot;6&quot;&gt;&lt;/textarea&gt;
+			&lt;/div&gt;
+			&lt;!-- Break --&gt;
+			&lt;div class=&quot;12u$&quot;&gt;
+				&lt;div class=&quot;actions&quot;&gt;
+					&lt;input type=&quot;submit&quot; value=&quot;Send Message&quot; class=&quot;special&quot; /&gt;
+					&lt;input type=&quot;reset&quot; value=&quot;Reset&quot; /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+
+	&lt;hr /&gt;
+
+	&lt;!-- Image --&gt;
+	&lt;h2&gt;Image&lt;/h2&gt;
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;4u 12u$(mobile)&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;image fit&quot;&gt;&lt;img src=&quot;/assets/images/pic02.jpg&quot; alt=&quot;Ipsum Feugiat&quot; /&gt;&lt;/a&gt;
+        &lt;header&gt;
+          &lt;h3&gt;Ipsum Feugiat&lt;/h3&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;image fit&quot;&gt;&lt;img src=&quot;/assets/images/pic03.jpg&quot; alt=&quot;Rhoncus Semper&quot; /&gt;&lt;/a&gt;
+        &lt;header&gt;
+          &lt;h3&gt;Rhoncus Semper&lt;/h3&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;4u 12u$(mobile)&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;image fit&quot;&gt;&lt;img src=&quot;/assets/images/pic04.jpg&quot; alt=&quot;Magna Nullam&quot; /&gt;&lt;/a&gt;
+        &lt;header&gt;
+          &lt;h3&gt;Magna Nullam&lt;/h3&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;image fit&quot;&gt;&lt;img src=&quot;/assets/images/pic05.jpg&quot; alt=&quot;Natoque Vitae&quot; /&gt;&lt;/a&gt;
+        &lt;header&gt;
+          &lt;h3&gt;Natoque Vitae&lt;/h3&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;4u$ 12u$(mobile)&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;image fit&quot;&gt;&lt;img src=&quot;/assets/images/pic06.jpg&quot; alt=&quot;Dolor Penatibus&quot; /&gt;&lt;/a&gt;
+        &lt;header&gt;
+          &lt;h3&gt;Dolor Penatibus&lt;/h3&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;item&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;image fit&quot;&gt;&lt;img src=&quot;/assets/images/pic07.jpg&quot; alt=&quot;Orci Convallis&quot; /&gt;&lt;/a&gt;
+        &lt;header&gt;
+          &lt;h3&gt;Orci Convallis&lt;/h3&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+	&lt;h3&gt;Left &amp;amp; Right&lt;/h3&gt;
+	&lt;p&gt;&lt;span class=&quot;image left&quot;&gt;&lt;img src=&quot;/assets/images/pic03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.&lt;/p&gt;
+	&lt;p&gt;&lt;span class=&quot;image right&quot;&gt;&lt;img src=&quot;/assets/images/pic02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.&lt;/p&gt;
+
+	&lt;hr /&gt;
+
+	&lt;!-- Preformatted Code --&gt;
+	&lt;h2&gt;Preformatted&lt;/h2&gt;
+	&lt;pre&gt;&lt;code&gt;i = 0;
+
+while (!deck.isInOrder()) {
+	print 'Iteration ' + i;
+	deck.shuffle();
+	i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';&lt;/code&gt;&lt;/pre&gt;</content><author><name>Andrew Montoya IV</name></author><category term="Film &amp; Design" /><category term="Code" /><category term="Film" /><summary type="html">Text This is bold and this is strong. This is italic and this is emphasized. This is superscript text and this is subscript text. This is underlined and this is code: for (;;) { ... }. Finally, this is a link. Heading Level 2 Heading Level 3 Heading with a Subtitle Lorem ipsum dolor sit amet nullam id egestas urna aliquam Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</summary></entry><entry><title type="html">Fourth Post</title><link href="http://localhost:4000/film%20&%20design/2015/09/12/fourth-post.html" rel="alternate" type="text/html" title="Fourth Post" /><published>2015-09-12T00:00:00-05:00</published><updated>2015-09-12T00:00:00-05:00</updated><id>http://localhost:4000/film%20&amp;%20design/2015/09/12/fourth-post</id><content type="html" xml:base="http://localhost:4000/film%20&amp;%20design/2015/09/12/fourth-post.html">&lt;p&gt;Lorem ipsum dolor sit amet, harum malorum nominavi mea et. Atqui maluisset duo cu, summo dignissim voluptatum sit ut. Ad quo quidam delicatissimi. Cum nihil noster patrioque id. Per at maiorum definitiones. Cu vix sint aliquip. No duo alia sale persecuti.&lt;/p&gt;
+
+&lt;p&gt;Pri id consul meliore luptatum, vix iudico impetus salutatus eu, duo at causae admodum complectitur. Qui eu salutandi dignissim, ea dictas audire commodo eos, vim cu autem dicam. Novum placerat moderatius sea ex, debet labitur reprehendunt mei ad. Tempor theophrastus et est, id tollit ponderum usu, at vis consul detraxit. Sit ut adhuc aeque.&lt;/p&gt;
+
+&lt;p&gt;Ut eum labore antiopam. Cum eu modus rationibus. Illud deleniti cum cu. At vix illum vitae tation, solet oporteat complectitur at vel. Vim te simul eleifend, et per insolens conceptam, ad sint posidonium est. Ad vocent propriae principes duo.&lt;/p&gt;
+
+&lt;p&gt;Audire periculis id vis, cum eu sonet option patrioque, his dicam sanctus imperdiet ad. Ad sonet dolorum est. Eu dolore adipisci volutpat mei, eu nec nisl molestiae. Usu ad veri omnesque pertinacia, duis scripserit ad nam. Quo id eligendi legendos.&lt;/p&gt;
+
+&lt;p&gt;Eos cu partiendo vituperatoribus. Mel id duis delenit atomorum, mei tamquam nostrum ne, id eum hinc decore mediocrem. Mei feugiat habemus tincidunt ut, atqui detraxit ex usu. Vix ad commodo eripuit alienum, an has idque delicatissimi. Dolores reformidans mel ne, duis numquam disputando quo te.&lt;/p&gt;
+
+&lt;p&gt;Eum eu tritani accusata qualisque, pro ei purto vocent. Vim in insolens hendrerit similique. Nobis munere antiopam ei vix. Cum no labore partiendo conceptam. Sea id vide viderer mandamus, magna posidonium nam at. Ad populo persius duo, vel audire detracto scribentur ut.&lt;/p&gt;
+
+&lt;p&gt;Vim te fastidii sententiae. Vix ad facilis gloriatur, mei an diceret iracundia vituperatoribus. Iudico consetetur dissentiunt pri ut. Consul dictas pri ne. Nec an alia volumus scaevola, eos movet deleniti argumentum te. Latine abhorreant his ad, ut modus tempor euismod pri.&lt;/p&gt;
+
+&lt;p&gt;Amet illum at sea, est autem fabulas eu, quod nonumes lobortis no sed. Has ei fugit adipisci reprimique. Enim tamquam ornatus pri ei. Alii harum invidunt nec ex, pri vidit latine ne. Has vocent nominati rationibus ad, ex partiendo prodesset moderatius has, vim quod paulo ad. Ex nec etiam electram, pri illud appetere eu.&lt;/p&gt;
+
+&lt;p&gt;An nobis instructior eos, eam libris aperiam corrumpit ex. Case omnesque eu per. Et vix iisque tritani. Autem posidonium eu vis, sit et mutat brute. Usu ne postulant intellegat omittantur, mazim saperet adolescens mel at.&lt;/p&gt;
+
+&lt;p&gt;Nam at velit percipit detraxit, quas modus mea ut. Ius an natum doctus vivendum. Quo at debet vidisse viderer, mollis eripuit ex nec. Sed ut choro saepe, sale augue sea et. His nemore dolorum mnesarchum at, ius an adipisci aliquando, laoreet placerat ea ius.&lt;/p&gt;</content><author><name>Chris</name></author><category term="Film &amp; Design" /><category term="Film" /><summary type="html">Lorem ipsum dolor sit amet, harum malorum nominavi mea et. Atqui maluisset duo cu, summo dignissim voluptatum sit ut. Ad quo quidam delicatissimi. Cum nihil noster patrioque id. Per at maiorum definitiones. Cu vix sint aliquip. No duo alia sale persecuti.</summary></entry><entry><title type="html">Third Post</title><link href="http://localhost:4000/film%20&%20design/2014/09/12/third-post.html" rel="alternate" type="text/html" title="Third Post" /><published>2014-09-12T00:00:00-05:00</published><updated>2014-09-12T00:00:00-05:00</updated><id>http://localhost:4000/film%20&amp;%20design/2014/09/12/third-post</id><content type="html" xml:base="http://localhost:4000/film%20&amp;%20design/2014/09/12/third-post.html">&lt;p&gt;See the icon?&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, harum malorum nominavi mea et. Atqui maluisset duo cu, summo dignissim voluptatum sit ut. Ad quo quidam delicatissimi. Cum nihil noster patrioque id. Per at maiorum definitiones. Cu vix sint aliquip. No duo alia sale persecuti.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;image left&quot;&gt;&lt;img src=&quot;/assets/images/pic03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Pri id consul meliore luptatum, vix iudico impetus salutatus eu, duo at causae admodum complectitur. Qui eu salutandi dignissim, ea dictas audire commodo eos, vim cu autem dicam. Novum placerat moderatius sea ex, debet labitur reprehendunt mei ad. Tempor theophrastus et est, id tollit ponderum usu, at vis consul detraxit. Sit ut adhuc aeque.&lt;/p&gt;
+
+&lt;p&gt;Ut eum labore antiopam. Cum eu modus rationibus. Illud deleniti cum cu. At vix illum vitae tation, solet oporteat complectitur at vel. Vim te simul eleifend, et per insolens conceptam, ad sint posidonium est. Ad vocent propriae principes duo.&lt;/p&gt;
+
+&lt;p&gt;Audire periculis id vis, cum eu sonet option patrioque, his dicam sanctus imperdiet ad. Ad sonet dolorum est. Eu dolore adipisci volutpat mei, eu nec nisl molestiae. Usu ad veri omnesque pertinacia, duis scripserit ad nam. Quo id eligendi legendos.&lt;/p&gt;
+
+&lt;p&gt;Eos cu partiendo vituperatoribus. Mel id duis delenit atomorum, mei tamquam nostrum ne, id eum hinc decore mediocrem. Mei feugiat habemus tincidunt ut, atqui detraxit ex usu. Vix ad commodo eripuit alienum, an has idque delicatissimi. Dolores reformidans mel ne, duis numquam disputando quo te.&lt;/p&gt;
+
+&lt;p&gt;Eum eu tritani accusata qualisque, pro ei purto vocent. Vim in insolens hendrerit similique. Nobis munere antiopam ei vix. Cum no labore partiendo conceptam. Sea id vide viderer mandamus, magna posidonium nam at. Ad populo persius duo, vel audire detracto scribentur ut.&lt;/p&gt;
+
+&lt;p&gt;Vim te fastidii sententiae. Vix ad facilis gloriatur, mei an diceret iracundia vituperatoribus. Iudico consetetur dissentiunt pri ut. Consul dictas pri ne. Nec an alia volumus scaevola, eos movet deleniti argumentum te. Latine abhorreant his ad, ut modus tempor euismod pri.&lt;/p&gt;
+
+&lt;p&gt;Amet illum at sea, est autem fabulas eu, quod nonumes lobortis no sed. Has ei fugit adipisci reprimique. Enim tamquam ornatus pri ei. Alii harum invidunt nec ex, pri vidit latine ne. Has vocent nominati rationibus ad, ex partiendo prodesset moderatius has, vim quod paulo ad. Ex nec etiam electram, pri illud appetere eu.&lt;/p&gt;
+
+&lt;p&gt;An nobis instructior eos, eam libris aperiam corrumpit ex. Case omnesque eu per. Et vix iisque tritani. Autem posidonium eu vis, sit et mutat brute. Usu ne postulant intellegat omittantur, mazim saperet adolescens mel at.&lt;/p&gt;
+
+&lt;p&gt;Nam at velit percipit detraxit, quas modus mea ut. Ius an natum doctus vivendum. Quo at debet vidisse viderer, mollis eripuit ex nec. Sed ut choro saepe, sale augue sea et. His nemore dolorum mnesarchum at, ius an adipisci aliquando, laoreet placerat ea ius.&lt;/p&gt;</content><author><name>Chris</name></author><category term="Film &amp; Design" /><category term="Film" /><summary type="html">See the icon?</summary></entry><entry><title type="html">Second Post</title><link href="http://localhost:4000/programming/2013/09/12/second-post.html" rel="alternate" type="text/html" title="Second Post" /><published>2013-09-12T00:00:00-05:00</published><updated>2013-09-12T00:00:00-05:00</updated><id>http://localhost:4000/programming/2013/09/12/second-post</id><content type="html" xml:base="http://localhost:4000/programming/2013/09/12/second-post.html">&lt;p&gt;Lorem ipsum dolor sit amet, harum malorum nominavi mea et. Atqui maluisset duo cu, summo dignissim voluptatum sit ut. Ad quo quidam delicatissimi. Cum nihil noster patrioque id. Per at maiorum definitiones. Cu vix sint aliquip. No duo alia sale persecuti.&lt;/p&gt;
+
+&lt;p&gt;Pri id consul meliore luptatum, vix iudico impetus salutatus eu, duo at causae admodum complectitur. Qui eu salutandi dignissim, ea dictas audire commodo eos, vim cu autem dicam. Novum placerat moderatius sea ex, debet labitur reprehendunt mei ad. Tempor theophrastus et est, id tollit ponderum usu, at vis consul detraxit. Sit ut adhuc aeque.&lt;/p&gt;
+
+&lt;p&gt;Ut eum labore antiopam. Cum eu modus rationibus. Illud deleniti cum cu. At vix illum vitae tation, solet oporteat complectitur at vel. Vim te simul eleifend, et per insolens conceptam, ad sint posidonium est. Ad vocent propriae principes duo.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;image right&quot;&gt;&lt;img src=&quot;/assets/images/pic03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Audire periculis id vis, cum eu sonet option patrioque, his dicam sanctus imperdiet ad. Ad sonet dolorum est. Eu dolore adipisci volutpat mei, eu nec nisl molestiae. Usu ad veri omnesque pertinacia, duis scripserit ad nam. Quo id eligendi legendos.&lt;/p&gt;
+
+&lt;p&gt;Eos cu partiendo vituperatoribus. Mel id duis delenit atomorum, mei tamquam nostrum ne, id eum hinc decore mediocrem. Mei feugiat habemus tincidunt ut, atqui detraxit ex usu. Vix ad commodo eripuit alienum, an has idque delicatissimi. Dolores reformidans mel ne, duis numquam disputando quo te.&lt;/p&gt;
+
+&lt;p&gt;Eum eu tritani accusata qualisque, pro ei purto vocent. Vim in insolens hendrerit similique. Nobis munere antiopam ei vix. Cum no labore partiendo conceptam. Sea id vide viderer mandamus, magna posidonium nam at. Ad populo persius duo, vel audire detracto scribentur ut.&lt;/p&gt;
+
+&lt;p&gt;Vim te fastidii sententiae. Vix ad facilis gloriatur, mei an diceret iracundia vituperatoribus. Iudico consetetur dissentiunt pri ut. Consul dictas pri ne. Nec an alia volumus scaevola, eos movet deleniti argumentum te. Latine abhorreant his ad, ut modus in the following table:&lt;/p&gt;
+
+&lt;div class=&quot;table-wrapper&quot;&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Description&lt;/th&gt;
+        &lt;th&gt;Price&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Item 1&lt;/td&gt;
+        &lt;td&gt;Ante turpis integer aliquet porttitor.&lt;/td&gt;
+        &lt;td&gt;29.99&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Item 2&lt;/td&gt;
+        &lt;td&gt;Vis ac commodo adipiscing arcu aliquet.&lt;/td&gt;
+        &lt;td&gt;19.99&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Item 3&lt;/td&gt;
+        &lt;td&gt; Morbi faucibus arcu accumsan lorem.&lt;/td&gt;
+        &lt;td&gt;29.99&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Item 4&lt;/td&gt;
+        &lt;td&gt;Vitae integer tempus condimentum.&lt;/td&gt;
+        &lt;td&gt;19.99&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Item 5&lt;/td&gt;
+        &lt;td&gt;Ante turpis integer aliquet porttitor.&lt;/td&gt;
+        &lt;td&gt;29.99&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+      &lt;tr&gt;
+        &lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;
+        &lt;td&gt;100.00&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tfoot&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Amet illum at sea, est autem fabulas eu, quod nonumes lobortis no sed. Has ei fugit adipisci reprimique. Enim tamquam ornatus pri ei. Alii harum invidunt nec ex, pri vidit latine ne. Has vocent nominati rationibus ad, ex partiendo prodesset moderatius has, vim quod paulo ad. Ex nec etiam electram, pri illud appetere eu.&lt;/p&gt;
+
+&lt;p&gt;An nobis instructior eos, eam libris aperiam corrumpit ex. Case omnesque eu per. Et vix iisque tritani. Autem posidonium eu vis, sit et mutat brute. Usu ne postulant intellegat omittantur, mazim saperet adolescens mel at.&lt;/p&gt;
+
+&lt;p&gt;Nam at velit percipit detraxit, quas modus mea ut. Ius an natum doctus vivendum. Quo at debet vidisse viderer, mollis eripuit ex nec. Sed ut choro saepe, sale augue sea et. His nemore dolorum mnesarchum at, ius an adipisci aliquando, laoreet placerat ea ius.&lt;/p&gt;</content><author><name>Chris</name></author><category term="Programming" /><category term="Code" /><summary type="html">Lorem ipsum dolor sit amet, harum malorum nominavi mea et. Atqui maluisset duo cu, summo dignissim voluptatum sit ut. Ad quo quidam delicatissimi. Cum nihil noster patrioque id. Per at maiorum definitiones. Cu vix sint aliquip. No duo alia sale persecuti.</summary></entry><entry><title type="html">First Post</title><link href="http://localhost:4000/programming/2012/09/12/first-post.html" rel="alternate" type="text/html" title="First Post" /><published>2012-09-12T00:00:00-05:00</published><updated>2012-09-12T00:00:00-05:00</updated><id>http://localhost:4000/programming/2012/09/12/first-post</id><content type="html" xml:base="http://localhost:4000/programming/2012/09/12/first-post.html">&lt;p&gt;Lorem ipsum dolor sit amet, iusto ridens dictas te sed. Error latine vis et. Ex cum munere definitiones, ne quas debitis contentiones cum, epicurei constituam ea sit. Dicant aeterno dolorum ex eum, qui everti iisque consectetuer ea! Duo in falli similique, nec tritani accusam te. Enim sapientem intellegat te pri, nam at atqui accumsan vituperata.&lt;/p&gt;
+
+&lt;p&gt;Sed id graeci feugiat. No meis summo consequat vel! Albucius phaedrum omittantur eos an, ex sit lorem possim perpetua. Usu et sumo posidonium, ut qui dicat sapientem tincidunt, et has consul oporteat torquatos! In qui fabulas facilisis, justo nonumes an his, quo vidisse nusquam facilisis no. Eam iriure mediocrem suavitate an?&lt;/p&gt;
+
+&lt;p&gt;Quo te solum malorum prompta, porro oblique senserit cum et! Pro wisi cetero periculis ei, nam ullum dicit accusam ne, ad quo apeirian principes dissentiunt. An mea mucius vocent iisque? Vel eu altera consetetur, clita perfecto mea ad. Eos in vero ullum regione, ei veniam disputando pro, nam et iuvaret detracto voluptua.&lt;/p&gt;
+
+&lt;p&gt;Ad tritani deleniti sit, ne per ubique habemus singulis. Pro at integre alienum mediocritatem, mea ad libris adipisci necessitatibus, nostro constituam sit te. Recusabo oportere et mea, case minimum deleniti no quo, deseruisse conclusionemque vis te. Nam ex iudicabit constituam accommodare, dicam singulis ex eos! Eu mea viderer ceteros repudiandae, id erat voluptatum mea, ut consul omittam convenire quo. Id justo ipsum mei, modus contentiones per et! At mel omnium lucilius instructior, vel quando graeco in, eos docendi periculis eloquentiam ut.&lt;/p&gt;
+
+&lt;p&gt;Eam habemus aliquando ut. Id idque virtute antiopam duo, et idque falli incorrupte eos, in sea omnium instructior. Mei ex nostrud moderatius cotidieque, cu sea partiendo euripidis, eam no tollit doming! Has ne facilisi vulputate, aliquando disputationi mel eu. Ex pri diceret delectus intellegam, regione definiebas pro ex.&lt;/p&gt;</content><author><name>Chris</name></author><category term="Programming" /><category term="Code" /><summary type="html">Lorem ipsum dolor sit amet, iusto ridens dictas te sed. Error latine vis et. Ex cum munere definitiones, ne quas debitis contentiones cum, epicurei constituam ea sit. Dicant aeterno dolorum ex eum, qui everti iisque consectetuer ea! Duo in falli similique, nec tritani accusam te. Enim sapientem intellegat te pri, nam at atqui accumsan vituperata.</summary></entry></feed>

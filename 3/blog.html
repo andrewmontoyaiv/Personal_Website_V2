@@ -6,15 +6,15 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 -->
 <html><head><!-- Robots -->
-  <meta name="robots" content="noindex, nofollow" /><!-- Title, description, author --><title>404 Error | Andrew Montoya IV - Programmer &amp; Tect Artist</title>
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="http://localhost:4000/3/blog.html" /><!-- Title, description, author --><title>Blog | Andrew Montoya IV - Programmer &amp; Tect Artist</title>
   <meta name="description" content="My Portfolio &amp; Blog Site" />
   <meta name="author" content="Andrew Montoya IV" />
   
   <!-- Open Graph -->
-  <meta property="og:title" content="404 Error | Andrew Montoya IV - Programmer &amp; Tect Artist" />
+  <meta property="og:title" content="Blog | Andrew Montoya IV - Programmer &amp; Tect Artist" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="http://localhost:4000/assets/images/avatar.jpg" />
-  <meta property="og:url" content="http://localhost:4000/404" />
+  <meta property="og:url" content="http://localhost:4000/3/blog.html" />
   <meta property="og:site_name" content="Andrew Montoya IV" />
   <meta property="og:description" content="My Portfolio &amp; Blog Site" />
   
@@ -48,17 +48,24 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 <nav id="nav">
   <ul><!-- Reference to blog page --><!-- customized --><li><a href="http://localhost:4000/" id="home-link">
             <span class="icon fa-home">Home</span>
-          </a></li><li><a href="http://localhost:4000/blog.html" id="blog-link">
+          </a></li><li><a href="http://localhost:4000/blog.html" id="" class="active">
             <span class="icon fa-pencil">Blog</span>
-          </a></li>
-
-
-          <!-- Whitelist of pages that can have blog link (from within blog, highlighted) --><li><a href="http://localhost:4000/reading-list.html" id="projects-link">
+          </a></li><li><a href="http://localhost:4000/reading-list.html" id="projects-link">
             <span class="icon fa-book">Projects</span>
           </a></li><hr class = "nav_divider">
 
   <!-- ____________________________________ Lower Bracket ____________________________________ -->
-    <!-- Static blog pages whitelist links TODO: refactor to a list --><!-- Non - blog pages --></ul>
+    <!-- Static blog pages whitelist links TODO: refactor to a list --><!-- All link --><!-- Static blog pages whitelist links TODO: refactor to a list --><li><a href="http://localhost:4000/blog.html" id="" class="active">
+              <span>Show All</span>
+            </a></li><!-- Other blog tags --><!-- Produce Anchor Element --><!-- Produce rest of the elements --><li class = "categories"><a href="http://localhost:4000/category/programming/blog.html" id="projects-link">
+                  <span>&raquo; &nbsp; programming</span>
+                </a></li>
+                <!-- Whitelist of approved pages --><!-- Produce Anchor Element --><!-- Produce rest of the elements --><li class = "categories"><a href="http://localhost:4000/category/film%20&%20design/blog.html" id="projects-link">
+                  <span>&raquo; &nbsp; film & design</span>
+                </a></li>
+                <!-- Whitelist of approved pages --><!-- Blog Static Pages --><li><a href="http://localhost:4000/archive/" id="archive-link">
+              <span class="icon fa-link">Archive</span>
+            </a></li></ul>
 </nav>
 </div>
   <div class="bottom"><!-- Social Icons -->
@@ -66,15 +73,16 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 </div>
 </div>
 <!-- Main -->
-<div id="main">
-	<!-- Page -->
-	<article class="shade-two">
-	  <div class="container">
-			<header>
-				<h2>404 Error</h2></header><p>The requested page could not be found.</p>
+<div id="main"><!-- Posts List --><section id="first-post" class="shade-two">
+  <div class="container"><header>
+			<h2><a href="http://localhost:4000/programming/2012/09/12/first-post.html">First Post</a></h2><p>Chris | 12 September 2012</p></header><p>Lorem ipsum dolor sit amet, iusto ridens dictas te sed. Error latine vis et. Ex cum munere definitiones, ne quas debitis contentiones cum, epicurei constituam ea sit. Dicant aeterno dolorum ex eum, qui everti iisque consectetuer ea! Duo in falli similique, nec tritani accusam te. Enim sapientem intellegat te pri, nam at atqui accumsan vituperata.
+
+</p><a href="http://localhost:4000/programming/2012/09/12/first-post.html">read more</a></div>
+</section>
+<div class="container"><div class="PageNavigation"><a class="prev" href="/2/blog.html">&laquo; Newer</a></div>
 </div>
-	</article>
-</div><!-- Footer -->
+</div>
+<!-- Footer -->
 <div id="footer">
 
   <!-- Copyright -->
