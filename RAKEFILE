@@ -11,9 +11,9 @@ namespace :git do
   end
 
   def git_clean?
-    git_state = "Hello"
+    git_state = `git diff-index --quiet HEAD`
 	puts #{git_state}
-    clean = (git_state =~ /working directory clean/)
+    clean = (git_state =~ 1)
   end
 
   desc "Verify source branch"
