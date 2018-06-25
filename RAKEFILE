@@ -11,7 +11,7 @@ namespace :git do
   end
 
   def git_clean?
-    git_state = `git status 2> /dev/null | tail -n1`
+    git_state = `git status1`
     clean = (git_state =~ /working directory clean/)
   end
 
